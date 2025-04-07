@@ -1,0 +1,66 @@
+{
+  "name": "Effect Trail",
+  "fpsLimit": 120,
+  "particles": {
+    "number": {
+      "value": 60,
+      "density": {
+        "enable": true
+      }
+    },
+    "color": {
+      "value": ["#72B01D", "#7BB534", "#84BA4A", "#8CBF61", "#95C378", "#9DC88F", "#A6CDA5", "#A4C2A8"]
+    },
+    "effect": {
+      "type": "trail",
+      "options": {
+        "trail": {
+          "fade": true,
+          "length": {
+            "min": 10,
+            "max": 30
+          }
+        }
+      }
+    },
+    "shape": {
+      "type": "circle"
+    },
+    "size": {
+      "value": {
+        "min": 2,
+        "max": 10
+      }
+    },
+    "move": {
+      "direction": -90,
+      "enable": true,
+      "speed": {
+        "min": 1,
+        "max": 5
+      }
+    }
+  },
+  "interactivity": {
+    "events": {
+      "onClick": {
+        "enable": true,
+        "mode": "attract"
+      },
+      "onHover": {
+        "enable": true,
+        "mode": "none",
+        "parallax": {
+          "enable": true,
+          "force": 15,
+          "smooth": 5
+        }
+      }
+    }
+  },
+  "background": {
+    "color": "#0d0a0b"
+  },
+  "fullScreen": false,
+  "pauseOnOutsideViewport": true
+}

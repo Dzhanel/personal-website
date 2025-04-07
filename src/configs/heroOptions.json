@@ -1,12 +1,11 @@
-import { type ISourceOptions} from "@tsparticles/engine";
-
-export const particlesOptions: ISourceOptions = {
+{
   "autoPlay": true,
   "background": {
     "color": {
       "value": "#0d0a0b"
     }
   },
+  "responsive": "canvas",
   "fpsLimit": 120,
   "fullScreen": {
     "enable": false,
@@ -16,12 +15,17 @@ export const particlesOptions: ISourceOptions = {
   "interactivity": {
     "events": {
       "onClick": {
-        "enable": false,
+        "enable": true,
         "mode": "push"
       },
       "onHover": {
         "enable": true,
-        "mode": "grab"
+        "mode": "grab",
+        "parallax": {
+          "enable": true,
+          "force": 60,
+          "smooth": 3
+        }
       }
     },
     "modes": {
@@ -77,5 +81,5 @@ export const particlesOptions: ISourceOptions = {
     }
   },
   "pauseOnBlur": true,
-  "pauseOnOutsideViewport": true,
-};
+  "pauseOnOutsideViewport": true
+}
