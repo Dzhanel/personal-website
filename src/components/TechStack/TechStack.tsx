@@ -1,7 +1,7 @@
 import Particles from "@tsparticles/react";
 import { useParticlesConfig } from "../../configs/ParticlesConfig";
 import { useState } from "react";
-
+import Nav from "../Nav/Nav";
 interface TechCardProps {
   title: string;
   skills: string;
@@ -9,24 +9,24 @@ interface TechCardProps {
 
 export default function TechStack() {
   const { techStackParticlesOptions } = useParticlesConfig();
-
   const techCards = [
     {
       title: "Languages",
       skills: "C#, JavaScript, Python, C, Ruby, Haskell, SQL",
     },
     {
-      title: "Frameworks",
-      skills: "ASP.NET, Ruby On Rails, React, NextJS, Node.JS",
+      title: "Frameworks & libraries",
+      skills:
+        "ASP.NET, Ruby On Rails, React, NextJS, Node.JS, TailwindCSS, Bootstrap",
     },
     {
       title: "And More",
-      skills: "TailwindCSS, Bootstrap, Git, Unix/Linux",
+      skills: "Git, Unix/Linux",
     },
   ];
 
   return (
-    <div className="relative min-h-screen mt-50">
+    <div className="relative min-h-screen mt-20">
       <div className="absolute top-0 left-0 w-full h-[30vh] bg-gradient-to-b from-[rgba(13,10,11,1)] to-[rgba(13,10,11,0)] z-10" />
 
       <Particles
@@ -35,16 +35,10 @@ export default function TechStack() {
         options={techStackParticlesOptions}
       />
 
-      <div className="relative z-20 pb-32 mt-10">
-        {/* Responsive title */}
-        <h1 className="font-[ConsoleNeue] text-center text-3xl md:text-5xl lg:text-7xl font-bold p t-10 md:pt-20 text-white">
-          Tech Stack
-        </h1>
+      <div className="relative z-20 mt-0">
+        <Nav section="TechStack" />
 
-        <div
-          className="flex flex-col lg:flex-row justify-center items-center mt-10 md:mt-24 px-4
-                     space-y-16 lg:space-y-0 lg:space-x-16 xl:space-x-24"
-        >
+        <div className="flex flex-col lg:flex-row justify-center items-center mt-10 md:mt-24 px-4 space-y-16 lg:space-y-0 lg:space-x-16 xl:space-x-24">
           {techCards.map((card, index) => (
             <TechCard key={index} title={card.title} skills={card.skills} />
           ))}
@@ -91,9 +85,9 @@ function TechCard({ title, skills }: TechCardProps) {
     <div
       className="font-[ConsoleNeue] w-[90%] max-w-lg md:max-w-xl lg:w-[500px] xl:w-[550px]
                 h-96 md:h-[450px] lg:h-[500px] xl:h-[550px]
-                bg-transparent/50 border border-lime-700 rounded-lg
+                border border-lime-700 rounded-lg
                 flex flex-col justify-center items-center cursor-pointer
-                backdrop-blur-sm
+                backdrop-blur-sm bg-[rgba(30,30,30,0.7)]
                 transition-all duration-300 ease-out"
       style={{
         ...tiltStyle,

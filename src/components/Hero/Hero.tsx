@@ -1,5 +1,6 @@
 import { useParticlesConfig } from "../../configs/ParticlesConfig";
-import Nav from "./HeroNav/HeroNav";
+import { useCallback } from "react";
+import SocialLinks from "../Nav/SocialLinks/SocialLinks";
 import Particles from "@tsparticles/react";
 
 export default function Hero() {
@@ -15,7 +16,7 @@ export default function Hero() {
       <title>Welcome to My Website</title>
       <div className="flex w-full h-screen text-white p-0 font-[ConsoleNeue]">
         <Particles
-          id="tsparticles"
+          id="tsparticles1"
           className="absolute inset-0 w-full h-full"
           options={heroParticlesOptions}
         />
@@ -31,12 +32,44 @@ export default function Hero() {
             technologies to improve my skills. Excited to learn, create, and
             grow in the world of web development!
           </div>
-          <div className="inline-flex sticky top-10 z-20">
+          <div className="inline-flex">
             <Nav />
           </div>
+          <SocialLinks centered={false} />
         </div>
         <div className="absolute bottom-0 left-0 w-full h-[30vh] bg-gradient-to-t from-[rgba(13,10,11,1)] to-[rgba(13,10,11,0)]" />
       </div>
     </>
+  );
+}
+
+function Nav({ className = "" }) {
+  const scrollToSection = useCallback((sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, []);
+
+  return (
+    <ul className={`text-5xl lg:text-7xl mt-20 select-none ${className}`}>
+      {["TechStack", "Projects", "Contact Me"].map((item) => (
+        <li
+          key={item}
+          className="group cursor-pointer mt-3"
+          onClick={() => scrollToSection(`${item.toLowerCase()}-section`)}
+        >
+          <span className="text-lime-400 group-hover:text-8xl duration-300">
+            {"=> "}
+          </span>
+          <span className="inline-block duration-300 transition-transform transform group-hover:translate-x-4">
+            <a>{item}</a>
+          </span>
+        </li>
+      ))}
+    </ul>
   );
 }

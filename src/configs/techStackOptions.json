@@ -52,8 +52,8 @@
         "mode": "none",
         "parallax": {
           "enable": true,
-          "force": 15,
-          "smooth": 5
+          "force": 50,
+          "smooth": 20
         }
       }
     }
