@@ -5,6 +5,7 @@ import TechStack from "./components/TechStack/TechStack";
 import { initParticlesEngine } from "@tsparticles/react";
 import { loadAll } from "@tsparticles/all";
 import Projects from "./components/Projects/Projects";
+import ContactMe from "./components/ContactMe/ContactMe";
 
 export default function App() {
   const [initParticles, setInitParticles] = useState(false);
@@ -22,9 +23,7 @@ export default function App() {
       {initParticles && (
         <>
           <section id="about-section">
-            <div className="relative">
-              <Hero />
-            </div>
+            <Hero />
           </section>
           <div className="h-[25vh]" />
           <section id="techstack-section">
@@ -32,7 +31,11 @@ export default function App() {
           </section>
           <div className="h-[25vh]" />
           <section id="projects-section">
-            <Projects/>
+            <Projects />
+          </section>
+          <div className="h-[25vh]" />
+          <section id="contactme-section">
+            <ContactMe />
           </section>
         </>
       )}

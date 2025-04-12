@@ -48,7 +48,7 @@
   },
   "particles": {
     "number": {
-      "value": 120,
+      "value": 80,
       "density": {
         "enable": true,
         "width": 1920,

@@ -7,8 +7,8 @@
       "type": "trail",
       "options": {
         "trail": {
-          "length": 50,
-          "minWidth": 4
+          "length": 60,
+          "minWidth": 1
         }
       }
     },
@@ -32,11 +32,11 @@
         }
       },
       "random": false,
-      "speed": 3,
-      "straight": false
+      "speed": 5,
+      "straight": true
     },
     "number": {
-      "value": 0
+      "value": 1
     },
     "opacity": {
       "value": 1
@@ -45,7 +45,7 @@
       "type": "circle"
     },
     "size": {
-      "value": 2
+      "value": 3
     }
   },
   "background": {

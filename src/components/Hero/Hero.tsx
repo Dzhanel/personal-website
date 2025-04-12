@@ -60,7 +60,7 @@ function Nav({ className = "" }) {
         <li
           key={item}
           className="group cursor-pointer mt-3"
-          onClick={() => scrollToSection(`${item.toLowerCase()}-section`)}
+          onClick={() => scrollToSection(`${item.replace(" ", "").toLowerCase()}-section`)}
         >
           <span className="text-lime-400 group-hover:text-8xl duration-300">
             {"=> "}
