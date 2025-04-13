@@ -21,7 +21,7 @@ export default function Hero() {
           options={heroParticlesOptions}
         />
 
-        <div className="flex flex-col p-[5%] h-full relative rounded-lg z-15 bg-gradient-to-r from-[rgba(13,10,11,1)] via-[rgba(13,10,11,1)] to-[rgba(13,10,11,0)]">
+        <div className="flex flex-col p-[5%] h-full relative rounded-lg z-15 bg-gradient-to-r lg:from-[rgba(13,10,11,1)] lg:via-[rgba(13,10,11,1)] lg:to-[rgba(13,10,11,0)]">
           <p className="font-[ConsoleNeue] text-6xl md:text-6px lg:text-8xl">
             Dzhanel Mehmed
           </p>

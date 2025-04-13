@@ -22,3 +22,33 @@
   font-family: "ConsoleNeue";
   src: local("ConsoleNeue"), url("./assets/fonts/clacon2.ttf"), format("ttf");
 }
+.panel {
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.panel-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+/* Add this to your global CSS or create a new CSS module */
+.g-recaptcha > div {
+  margin: 0 auto;
+}
+
+/* Style the reCAPTCHA iframe */
+.g-recaptcha iframe {
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Fix for dark theme issues */
+.g-recaptcha {
+  background-color: rgba(30, 30, 30, 0.2);
+  padding: 2px;
+  border-radius: 5px;
+}

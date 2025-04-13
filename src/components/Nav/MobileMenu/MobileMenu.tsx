@@ -18,17 +18,15 @@ export default function MobileMenu({
 }: MobileMenuProps) {
   return (
     <>
-      {/* Mobile Burger Button */}
-      <div className="md:hidden fixed top-4 right-4 z-50">
+      <div className="cursor-pointer md:hidden fixed top-4 right-4 z-50">
         <button 
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="p-2 bg-[rgba(30,30,30,0.7)] border border-lime-700 rounded-md"
+          className="cursor-pointer p-2 bg-[rgba(30,30,30,0.7)] border border-lime-700 rounded-md"
         >
           {mobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
       </div>
 
-      {/* Mobile sidebar */}
       <div className={`font-[ConsoleNeue] fixed inset-y-0 right-0 z-40 w-64 bg-[rgba(13,10,11,0.95)] transform transition-transform duration-300 ease-in-out ${
         mobileMenuOpen ? "translate-x-0" : "translate-x-full"
       } md:hidden border-l border-lime-700 backdrop-blur-sm shadow-lg`}>
