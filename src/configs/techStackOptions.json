@@ -53,7 +53,7 @@
         "parallax": {
           "enable": true,
           "force": 50,
-          "smooth": 20
+          "smooth": 25
         }
       }
     }

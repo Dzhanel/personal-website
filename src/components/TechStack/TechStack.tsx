@@ -35,7 +35,7 @@ export default function TechStack() {
         options={techStackParticlesOptions}
       />
 
-      <div className="relative z-20 mt-0">
+      <div className="relative z-15 mt-0">
         <Nav section="TechStack" />
 
         <div className="flex flex-col lg:flex-row justify-center items-center mt-10 md:mt-24 px-4 space-y-16 lg:space-y-0 lg:space-x-16 xl:space-x-24">

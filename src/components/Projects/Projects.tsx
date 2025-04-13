@@ -75,12 +75,12 @@ export default function Projects() {
           options={projectsParticlesOptions}
         />
 
-        <div className="relative z-20">
+        <div className="relative z-15">
           <Nav section="Projects" />
 
-          <div className="container mt-10 pt-4 mx-auto px-5">
+          <div className="container justify-center mt-10 pt-4 mx-auto px-5">
             {loading ? (
-              <div className="w-100 h-100 justify-center text-center border-4 border-lime-500 rounded-full animate-spin border-t-transparent"></div>
+              <div className="w-100 h-100 mx-auto justify-center text-center border-4 border-lime-500 rounded-full animate-spin border-t-transparent"></div>
             ) : error ? (
               <div className="bg-red-500 font-[ConsoleNeue] bg-opacity-20 border border-red-500 text-white p-4 rounded-lg">
                 {error}

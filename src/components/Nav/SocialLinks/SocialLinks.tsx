@@ -8,7 +8,7 @@ import {
 
 export default function SocialLinks({centered}:{centered:boolean}) {
   return (
-    <div className={`flex space-x-4 mt-8 align-middle text-center ${centered ? "justify-center" : ""}`}>
+    <div className={`flex space-x-4 mt-8 align-middle text-center select-none ${centered ? "justify-center" : ""}`}>
       {[
         {
           href: "https://github.com/Dzhanel",

@@ -1,23 +1,48 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import SocialLinks from "./SocialLinks/SocialLinks";
+import MobileMenu from "./MobileMenu/MobileMenu";
 
 export default function Nav({ section }: { section: string }) {
-    const scrollToSection = useCallback((sectionId: string) => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    }, []);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  const scrollToSection = useCallback((sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+      // Close menu after navigation on mobile
+      setMobileMenuOpen(false);
+    }
+  }, []);
+
+  const navItems = ["About", "TechStack", "Projects", "Contact Me"];
 
   return (
     <>
-      <div className="font-[ConsoleNeue] text-center text-3xl md:text-5xl lg:text-7xl font-bold p md:pt-10 text-white mx-10">
-        {["About", "TechStack", "Projects", "Contact Me"].map((currentNavItem, index) => (
+      <MobileMenu 
+        mobileMenuOpen={mobileMenuOpen}
+        setMobileMenuOpen={setMobileMenuOpen}
+        navItems={navItems}
+        section={section}
+        scrollToSection={scrollToSection}
+      />
+
+      {/* Section title */}
+      <div className="text-center mb-8 md:hidden">
+        <h1 className="font-[ConsoleNeue] text-4xl md:text-5xl lg:text-6xl font-bold text-lime-500 mt-6 mb-2 tracking-wide">
+          {section}
+        </h1>
+        <div className="w-24 h-1 bg-lime-500 mx-auto"></div>
+      </div>
+
+      <div className="font-[ConsoleNeue] text-center text-3xl md:text-5xl lg:text-7xl font-bold md:pt-10 text-white mx-10 select-none hidden md:block">
+        {navItems.map((currentNavItem, index) => (
           <div key={currentNavItem} className="inline-block mx-5 align-middle">
-            {index > 0 && <span className={`text-${currentNavItem === section ? "lime" : "gray"}-500`}> • </span>}
+            {index > 0 && <span className="text-gray-500">
+              {currentNavItem === section ? <span className="text-lime-500"> • </span> : <span className="text-gray-500"> • </span>}
+            </span>}
             <a
               onClick={() => scrollToSection(`${currentNavItem.replace(" ", "").toLowerCase()}-section`)}
               className={`
@@ -33,7 +58,11 @@ export default function Nav({ section }: { section: string }) {
           </div>
         ))}
       </div>
-      <SocialLinks centered={true} />
+      
+      {/* Show social links in desktop view */}
+      <div className="hidden md:block">
+        <SocialLinks centered={true} />
+      </div>
     </>
   );
 }
