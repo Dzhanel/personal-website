@@ -23,10 +23,6 @@ export default function SocialLinks({centered}:{centered:boolean}) {
         href: "https://instagram.com/dzhanel_m",
         icon: <FaInstagram size={30} />,
       },
-      // {
-      //   href: "mailto:dzhanel.mehmed.05@gmail.com",
-      //   icon: <FaEnvelope size={30} />,
-      // },
       {
         href: pdf,
         icon: <FaFileAlt size={30} />,

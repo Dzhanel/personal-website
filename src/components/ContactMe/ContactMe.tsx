@@ -49,10 +49,10 @@ export default function ContactMe() {
       setIsSubmitting(true);
 
       await emailjs.sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        import.meta.env.VITE_EMAILJS_SERVICE_ID as string,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string,
         form.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string
       );
 
       localStorage.setItem("lastEmailSubmission", Date.now().toString());
@@ -87,7 +87,7 @@ export default function ContactMe() {
       captchaInput.value = token;
       form.current?.appendChild(captchaInput);
 
-      sendEmail();
+      void sendEmail();
     }
   };
 
@@ -224,7 +224,7 @@ export default function ContactMe() {
             <div className="flex justify-center mb-6">
               <ReCAPTCHA
                 ref={recaptchaRef}
-                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY as string}
                 onChange={handleCaptchaChange}
                 theme="dark"
                 className="mx-auto"
@@ -233,6 +233,7 @@ export default function ContactMe() {
 
             <div className="flex justify-between">
               <button
+                type="button"
                 onClick={cancelSubmission}
                 className="bg-transparent border border-red-500 text-red-500 cursor-pointer hover:bg-red-900/30 px-4 py-2 rounded transition-colors"
               >

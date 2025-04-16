@@ -10,7 +10,7 @@ interface Repository {
   html_url: string;
   description: string;
   language: string | null;
-  stargazers_count: number; 
+  stargazers_count: number;
   forks_count: number;
   created_at: string;
   topics: string[];
@@ -45,7 +45,7 @@ export default function Projects() {
           throw new Error("Failed to fetch repositories");
         }
 
-        const data = await response.json();
+        const data = (await response.json()) as Repository[];
         setGithubData(data);
         setLoading(false);
       } catch (err) {
@@ -53,7 +53,7 @@ export default function Projects() {
         setLoading(false);
       }
     };
-    fetchRepos();
+    void fetchRepos();
   }, []);
 
   const formatDate = (dateString: string) => {
