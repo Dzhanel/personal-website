@@ -67,7 +67,6 @@ export default function Nav({ section }: { section: string }) {
         ))}
       </div>
 
-      {/* Show social links in desktop view */}
       <div className="hidden md:block">
         <SocialLinks centered={true} />
       </div>

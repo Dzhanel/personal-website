@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: system-ui, 'Courier New', Courier, monospace;
   line-height: 1.5;
   font-weight: 400;
 
@@ -20,7 +20,8 @@
 
 @font-face {
   font-family: "ConsoleNeue";
-  src: local("ConsoleNeue"), url("./assets/fonts/clacon2.ttf"), format("ttf");
+  src: local("ConsoleNeue"), url("./assets/fonts/clacon2.woff2"), format("ttf");
+  font-display: swap;
 }
 .panel {
   width: 100%;

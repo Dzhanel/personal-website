@@ -12,9 +12,13 @@ export default function App() {
   useEffect(() => {
     initParticlesEngine(async (engine) => {
       await loadAll(engine);
-    }).then(() => {
-      setInitParticles(true);
-    });
+    })
+      .then(() => {
+        setInitParticles(true);
+      })
+      .catch(() => {
+        setInitParticles(true);
+      });
   }, []);
 
   return (
