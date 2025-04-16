@@ -5,7 +5,7 @@ import {
   FaInstagram,
   FaLinkedin,
 } from "react-icons/fa";
-import pdf from "../../../assets/DzhanelCV.pdf"
+import pdf from "../../../assets/CV.pdf"
 
 export default function SocialLinks({centered}:{centered:boolean}) {
   return (
@@ -23,17 +23,13 @@ export default function SocialLinks({centered}:{centered:boolean}) {
         href: "https://instagram.com/dzhanel_m",
         icon: <FaInstagram size={30} />,
       },
-      // {
-      //   href: "mailto:dzhanel.mehmed.05@gmail.com",
-      //   icon: <FaEnvelope size={30} />,
-      // },
       {
         href: pdf,
         icon: <FaFileAlt size={30} />,
       },
-      ].map(({ href, icon }, index) => (
+      ].map(({ href, icon }) => (
       <a
-        key={index}
+        key={href}
         href={href}
         target={href.startsWith("mailto:") ? undefined : "_blank"}
         rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
